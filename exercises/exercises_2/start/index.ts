@@ -5,7 +5,13 @@
 Uzupełnij treść poniższych funkcji wraz z ich typowaniem. Pamiętaj o zmianie typowań `unknown`.
 */
 
-const cars: unknown[] = [
+interface Cars{
+  model: string,
+  brand: string,
+  year: number,
+}
+
+const cars: Cars[] = [
   {
     model: 'Q7',
     brand: 'Audi',
@@ -23,7 +29,7 @@ const cars: unknown[] = [
   },
 ];
 
-function carsAfter2000(cars: unknown): unknown {
+function carsAfter2000(cars: Cars[]): Cars[] {
   return cars.filter((car) => car.year > 2000);
 }
 
