@@ -1,18 +1,22 @@
-import React from 'react';
-import { User } from '../types';
+import React from "react";
+import TableRow from "@material-ui/core/TableRow";
+import TableCell from "@material-ui/core/TableCell";
+import { ReturnUsers } from "./Users";
 
-interface Props extends User {
-  email: string,
+interface Props {
+  usersData: ReturnUsers[];
 }
 
-const UserComponent = ({ name, surname, email }: Props ) => {
+export const User = ({ usersData }: Props) => {
+  const rows = usersData;
   return (
-    <div>
-      <p>{name}</p>
-      <p>{surname}</p>
-      <p>{email}</p>
-    </div>
+    <>
+      {rows.map((row) => (
+        <TableRow key={row.name}>
+          <TableCell>{row.name}</TableCell>
+          <TableCell>{row.surname}</TableCell>
+        </TableRow>
+      ))}
+    </>
   );
-}
-
-export default UserComponent;
+};
