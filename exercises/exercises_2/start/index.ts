@@ -34,3 +34,8 @@ function carsAfter2000(cars: Cars[]): Cars[] {
 }
 
 const newCars = carsAfter2000(cars);
+
+function fetchCars(): Promise<Cars[]>{
+  return Promise.resolve(cars)
+}
+
